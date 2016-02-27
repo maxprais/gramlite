@@ -1,0 +1,18 @@
+.logo{
+    height: 100px;
+    width: 400px;
+}
+.log{
+    text-align: center;
+}
+/*.logo:hover{*/
+    /*height: 110px;*/
+    /*width: 405px;*/
+/*}*/
+.navbar-default {
+    height: 120px;
+    background-color: #96DBF0;
+
+}
+
+

@@ -1,0 +1,44 @@
+.load-gallery{
+    background-color: #90F597;
+    position: absolute;
+}
+.load-gallery:hover{
+    color: white;
+    background-color: #3ABD43;
+}
+.form{
+    width: 40%;
+    display: inline-flex;
+}
+.form-cont{
+    text-align: center;
+    margin-right: 8%;
+    margin-bottom: 80%;
+}
+.search{
+    margin-top: 200px;
+    height: 100%;
+}
+.error-message{
+    color: white;
+    margin-top: 22px;
+    margin-left: 6px;
+}
+body{
+    background-image: url('../images/base.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@media screen and (max-width:966px){
+    body{
+        background-size: cover;
+    }
+}
+.bar{
+    text-align: center;
+}
+.navbar-default {
+    height: 120px;
+    background-color: #96DBF0;
+
+}

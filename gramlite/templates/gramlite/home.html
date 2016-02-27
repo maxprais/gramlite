@@ -1,0 +1,25 @@
+{% extends 'gramlite/base.html' %}
+{% load staticfiles %}
+{% block cssfile %}<link rel="stylesheet" href={% static 'css/home.css' %}>{% endblock %}
+
+{% block form %}
+    <div class="container search">
+        <div class="row">
+            <div class="bar">
+            <div class="form-cont">
+                        <form name="searchForm" class="form" action="/gramlite/check_user" method="post">
+                            {% csrf_token %}
+                            <input name="username" type="text" class="form-control" placeholder="Your instagram name...">
+                            <span class="input-group-btn">
+                                <button class="load-gallery btn btn-default" type="submit" value="Submit">Load My Gallery!</button>
+                            </span>
+                        </form>
+                {% if status == 'not found'%}
+                    <p class="error-message">Oops! Either this account is private or doesn't exist!</p>
+                {% endif %}
+            </div>
+            </div><!-- /.col-sm-8 -->
+        </div><!-- /.row -->
+    </div> <!-- /container -->
+
+{% endblock %}

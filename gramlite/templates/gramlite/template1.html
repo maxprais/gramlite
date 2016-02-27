@@ -1,0 +1,35 @@
+{% extends 'gramlite/base.html' %}
+{% load staticfiles %}
+{% block cssfile %}
+
+    <link rel="stylesheet" href={% static 'css/picture.css' %}>
+
+{% endblock %}
+
+{#Tempalte id in range; send those back to view.#}
+{#Load HTML files with template names instead#}
+{% block images %}
+    <div class="holder container">
+    <div class="filter-holder">
+        <a href={% url 'gramlite:styles' username=username templateid="4"%} ><div class="filter grayscale">Grayscale</div></a>
+        <a href={% url 'gramlite:styles' username=username templateid="5"%} ><div class="filter blur">Blur</div></a>
+        <a href={% url 'gramlite:styles' username=username templateid="3"%} ><div class="filter invert">Invert</div></a>
+        <a href={% url 'gramlite:styles' username=username templateid="2"%} ><div class="filter saturate">Saturate</div></a>
+        <a href={% url 'gramlite:styles' username=username templateid="1"%} ><div class="filter">Regular</div></a>
+
+    </div>
+    <h1 class="header">Welcome {{ username }}</h1>
+        <div class="row">
+            <div class="col-sm-12">
+            {% for image in images %}
+                <div class="col-sm-3">
+                    <div class="image-holder">
+                        <img class="image" src={{ image.image_link }}>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
